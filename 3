@@ -4118,6 +4118,27 @@ SliderPosZ:OnChanged(function(Value)
      posZ = Value
 end)
 SliderPosZ:SetValue(25)
+local random_pos = math.random(15, 25)
+--
+RandomCFrame = 0
+spawn(function()
+    if RandomCFrame <= 1 then
+        Tween(v.HumanoidRootPart.CFrame * CFrame.new(random_pos, random_pos, random_pos))
+        RandomCFrame = RandomCFrame + 0.1
+    elseif RandomCFrame >= 1 and RandomCFrame <= 2 then
+        Tween(v.HumanoidRootPart.CFrame * CFrame.new(random_pos, random_pos, random_pos))
+        RandomCFrame = RandomCFrame + 0.1
+    elseif RandomCFrame >= 2 and RandomCFrame <= 3 then
+        Tween(v.HumanoidRootPart.CFrame * CFrame.new(random_pos, random_pos, random_pos))
+        RandomCFrame = RandomCFrame + 0.1
+    elseif RandomCFrame >= 3 and RandomCFrame <= 4  then
+        Tween(v.HumanoidRootPart.CFrame * CFrame.new(random_pos, random_pos, random_pos))
+        RandomCFrame = RandomCFrame + 0.1
+    elseif RandomCFrame >=4 and RandomCFrame <= 5 then
+        Tween(v.HumanoidRootPart.CFrame * CFrame.new(random_pos, random_pos, random_pos))
+        RandomCFrame = 0
+    end
+end)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Stats
