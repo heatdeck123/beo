@@ -2562,8 +2562,8 @@ end)
         end)
         --------------------------------------------------------------------------------------------------------------------------------------------
         local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {
-            Title = "report bug in discord ⚠",
-            Description = "nếu có lỗi thì gửi vô discord + video",
+            Title = "Smoother when used in a private server.",
+            Description = "mượt mà hơn khi sử dụng trong private server.",
             Default = false })
         ToggleMobAura:OnChanged(function(Value)
             _G.AutoNear = Value
@@ -3648,39 +3648,29 @@ if Second_Sea then
                 end
             })
         end
-
-        local ScreenGui = Instance.new("ScreenGui")
-        local TextButton = Instance.new("TextButton")
-        local UICorner = Instance.new("UICorner")
+--[[
+        local ToggleUI = Instance.new("ScreenGui")
+        local ToggleButton = Instance.new("TextButton")
+        ToggleUI.Name = "ToggleUI"
+        ToggleUI.Parent = game.CoreGui
+        ToggleUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
         
-        -- Properties:
-        
-        ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-        ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-        
-        TextButton.Parent = ScreenGui
-        TextButton.BackgroundColor3 = Color3.fromRGB(85, 255, 255)
-        TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        TextButton.BorderSizePixel = 0
-        TextButton.Position = UDim2.new(0, 0, 0.565756798, 0)
-        TextButton.Size = UDim2.new(0, 138, 0, 28)
-        TextButton.Font = Enum.Font.SourceSansBold
-        TextButton.Text = "Stop Tween"
-        TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-        TextButton.TextSize = 20.000
-        
-        UICorner.Parent = TextButton
-        
-        -- Scripts:
-        
-        local function TAZJ_fake_script() -- TextButton.LocalScript 
-            local script = Instance.new('LocalScript', TextButton)
-        
+        ToggleButton.Name = "ToggleButton"
+        ToggleButton.Parent = ToggleUI
+        ToggleButton.BackgroundColor3 = Color3.fromRGB(30,20,20)
+        ToggleButton.BackgroundTransparency = 0.1
+        ToggleButton.BorderSizePixel = 0
+        ToggleButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+        ToggleButton.Size = UDim2.new(0, 50, 0, 50)
+        ToggleButton.Font = Enum.Font.SourceSans
+        ToggleButton.Text = "Stop Tween"
+        ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+        ToggleButton.TextSize = 14.000
+        ToggleButton.Draggable = false
+        ToggleButton.MouseButton1Click:Connect(function()
             toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
-            
-        end
-        coroutine.wrap(TAZJ_fake_script)()
-
+        end)
+]]
 if Second_Sea or Third_Sea then
     local ToggleHakiColor = Tabs.Stats:AddToggle("ToggleHakiColor", {Title = "Buy Haki Color", Description = "mua haki màu", Default = false })
     ToggleHakiColor:OnChanged(function(Value)
